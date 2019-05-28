@@ -3,7 +3,9 @@ import UIKit
 /*
  The dictionary for the players is a dictionary that contains another dictionary for the player attributes
  */
-let players2: [String:String] = [:]
+// test player info
+let joe: [String:String] = ["name":"Joe smith","height":"","isExperienced":"true","guardian(s)":"Jim and Jan Smith"]
+
 let players: [String:[String:Any]] = ["Joe smith":["height":42,"isExperienced":true,"guardian(s)":"Jim and Jan Smith"],
                   "Jill Tanner":["height":36,"isExperienced":true,"guardian(s)":"Clara Tanner"],
                   "Bill Bon":["height":43,"isExperienced":true,"guardian(s)":"Sara and Jenny Bon"],
@@ -76,17 +78,17 @@ func generateLetters(){
     var letter = ""
     
     for member in teamDragons {
-        letter = "Dear \(member.value["guardian(s)"]!), \n your child \(member.key) has been drafted to the Dragons and the practice date is March 17, 1pm"
+        letter = "Dear \(member.value["guardian(s)"]!), \n your child \(member.key) has been drafted to the Dragons and the practice date is March 17, 1pm \n\n\n"
         guardianLetters.append(letter)
     }
     
     for member in teamSharks {
-        letter = "Dear \(member.value["guardian(s)"]!), \n your child \(member.key) has been drafted to the Sharks and the practice date is March 17, 3pm"
+        letter = "Dear \(member.value["guardian(s)"]!), \n your child \(member.key) has been drafted to the Sharks and the practice date is March 17, 3pm \n\n\n"
         guardianLetters.append(letter)
     }
     
     for member in teamRaptors {
-        letter = "Dear \(member.value["guardian(s)"]!), \n your child \(member.key) has been drafted to the Raptors and the practice date is March 18, 1pm"
+        letter = "Dear \(member.value["guardian(s)"]!), \n your child \(member.key) has been drafted to the Raptors and the practice date is March 18, 1pm \n\n\n"
         guardianLetters.append(letter)
     }
 }
@@ -106,6 +108,7 @@ func printPlayerDetails(for player:String){
 }
 printPlayerDetails(for: "Joe smith")
 
+// running all functions to see if it runs as intended
 teamSort(all: players)
 generateLetters()
 printLetters()
